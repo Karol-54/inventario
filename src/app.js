@@ -2,6 +2,8 @@
 import express from "express";
 import cors from "cors"
 import categoriaRoutes from "./routes/categorias.routes.js"  
+import empleadoRoutes from "./routes/empleados.routes.js"  
+import clienteRouter from "./routes/clientes.routes.js"  
 
 /* Asignamos a app toda funcionalidad para mi server web*/
 const app = express();
@@ -15,6 +17,8 @@ app.use(cors());
 
 /* routes */
 app.use("/api/categorias",categoriaRoutes)
+app.use("/api/empleados",empleadoRoutes)
+app.use("/api/clientes",clienteRouter)
 
 /* hacemos disponible a mi server app para toda la aplicacion */
 export default app;

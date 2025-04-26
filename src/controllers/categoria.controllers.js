@@ -3,10 +3,11 @@ import getConnection from "./../db/database.js"
 const getCategorias = async (req, res)=>{
   try {
     const connection = await getConnection();
-    const result = await connection.query("SELECT CategoriaID, CategoriaNombre, Descripcion, Imagen FROM categorias")
+    // const result = await connection.query("SELECT CategoriaID, CategoriaNombre, Descripcion, Imagen FROM categorias")
+    const result = await connection.query("SELECT EmpleadosID, EmpleadosNombre, Apellido FROM Empleados")
     res.json(result);
   } catch (error) {
-    console.error("ERROR 500");
+    console.error("ERROR 500",error);
   }
  }
  
